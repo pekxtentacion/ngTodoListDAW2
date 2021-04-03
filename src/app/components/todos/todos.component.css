@@ -1,0 +1,29 @@
+.todos {
+    width: 45%;
+    margin: auto;
+}
+
+.todo {
+    background-color: beige;
+    display: flex;
+    justify-content: left;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.id {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.content {
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.deleteContainer {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 1em;
+}
