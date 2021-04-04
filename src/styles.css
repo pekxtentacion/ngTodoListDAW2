@@ -8,6 +8,9 @@
 
 header {
     display: flex;
+    text-transform: uppercase;
+    color: white;
     justify-content: center;
     padding: 2.5em;
+    background-color: darkslategrey;
 }

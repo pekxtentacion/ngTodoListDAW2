@@ -1,7 +1,11 @@
 <div class="todos">
-    <div class="todo" *ngFor="let todo of todos; let i=index;">
+    <form>
+        <input type="text" name="todoName" placeholder="Añade un todo..." class="todo-input" [(ngModel)]="inputTodo"/>
+        <input type="submit" value="Añadir" class="todo-submit" (click)="addTodo()">
+    </form>
+    <div *ngFor="let todo of todos; let i=index;" class="todo {{(todo.completed ? 'done' : '')}} {{i % 2 !== 0 ? 'odd' : ''}}" >
         <div class="id">{{ i }}</div>
-        <div class="content">{{ todo.content }}</div>
-        <div class="deleteContainer"><button class="delete">Eliminar</button></div>
+        <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
+        <div class="deleteContainer"><button (click)="deleteTodo(i)" class="delete">Eliminar</button></div>
     </div>
 </div>
