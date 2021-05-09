@@ -1,15 +1,41 @@
+.edit {
+    padding: 2em;
+}
+
 .todos {
     width: 45%;
     margin: auto;
     margin-top: 1em;
 }
 
+.buttons {
+    margin-left: 1em;
+}
+
+.notShow {
+    display: none;
+}
+
+.allTodos {
+    display: flex;
+    justify-content: space-between;
+}
+
 .todo {
     background-color: #c9eddd;
     display: flex;
     justify-content: left;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    align-items: center;
+    width: 40rem;
+}
+
+.todoDone {
+    display: flex;
+    justify-content: left;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
     align-items: center;
 }
 
@@ -29,6 +55,7 @@
     padding: 0.5em;
     color: white;
     background-color: darkslategrey;
+    margin-right: 0.5rem;
 }
 
 .id {

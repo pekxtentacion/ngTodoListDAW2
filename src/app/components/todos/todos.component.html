@@ -1,11 +1,50 @@
 <div class="todos">
-    <form>
-        <input type="text" name="todoName" placeholder="Añade un todo..." class="todo-input" [(ngModel)]="inputTodo"/>
-        <input type="submit" value="Añadir" class="todo-submit" (click)="addTodo()">
-    </form>
-    <div *ngFor="let todo of todos; let i=index;" class="todo {{(todo.completed ? 'done' : '')}} {{i % 2 !== 0 ? 'odd' : ''}}" >
-        <div class="id">{{ i }}</div>
-        <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
-        <div class="deleteContainer"><button (click)="deleteTodo(i)" class="delete">Eliminar</button></div>
+    <div class="options">
+        <mat-form-field class="example-form-field">
+            <mat-label>Añade un Todo...</mat-label>
+            <input matInput type="text" [(ngModel)]="inputTodo">
+            <button mat-button *ngIf="inputTodo" matSuffix mat-icon-button aria-label="Clear" (click)="inputTodo=''">
+              <mat-icon>close</mat-icon>
+            </button>
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="addTodo()" class="buttons">Añadir</button>
+        <div class="order">
+            <button mat-button color="primary" (click)="orderAlpha()">Ordenar alfabéticamente</button>
+            <button mat-button color="primary" (click)="orderDate()">Ordenar por fecha</button>
+            <button mat-button color="primary" (click)="orderState()">Ordenar por estado</button>
+        </div>
+    </div>
+    <div id="edit" class="edit notShow">
+        <h3>Editar Todo</h3>
+        <mat-form-field class="example-form-field">
+            <mat-label>Edita el Todo...</mat-label>
+            <input matInput type="text" [(ngModel)]="selectedTodo.content">
+            <button mat-button *ngIf="selectedTodo.content" matSuffix mat-icon-button aria-label="Clear" (click)="editTodo(selectedTodo)">
+                <mat-icon>save</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+    <div class="allTodos">
+        <div>
+            <h2>Todos</h2>
+            <div *ngFor="let todo of todos; let i=index;" class="todo {{(todo.completed ? 'done' : '')}} {{i % 2 !== 0 ? 'odd' : ''}}" >
+                <div class="id">{{ i }}</div>
+                <div class="content" (click)="toggleDone(i)">{{ todo.content }} </div>
+                <div class="deleteContainer">
+                    <button mat-fab color="primary" aria-label="Editar" (click)="editTodo(todo)" class="buttons">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-fab color="primary" aria-label="Eliminar" (click)="deleteTodo(i)" class="buttons">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Todos realizados</h2>
+            <div *ngFor="let todo of todosDone; let i=index;" class="todoDone" >
+                <div class="content">{{ todo.content }} </div>
+            </div>
+        </div>
     </div>
 </div>
