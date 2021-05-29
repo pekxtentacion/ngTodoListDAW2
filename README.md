@@ -2,6 +2,10 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
 
+## Características técnicas
+
+En esta aplicación alojada en https://pekxtentacion.github.io/ngTodoListDAW2/ podemos crear tareas que se pueden ordenar por orden alfabético, fecha o por estado. Se puede realizar un CRUD completo, añadiendo, leyendo, editando o borrando las tareas. También podemos ver un histórico con las tareas realizadas. En ella se utilizan elementos con Angular Material.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
